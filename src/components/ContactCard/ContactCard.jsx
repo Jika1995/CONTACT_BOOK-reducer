@@ -7,10 +7,13 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useNavigate } from 'react-router-dom';
+import { contactsContext } from '../../contactContext';
+import { useContext } from 'react';
 
 export default function MediaCard({item}) {
 
   const navigate = useNavigate();
+  const {deleteContact} = useContext(contactsContext)
 
   return (
     <Card sx={{ width: '25%', mt: 2}} variant='outlined'>
@@ -33,7 +36,7 @@ export default function MediaCard({item}) {
       </CardContent>
       <CardActions>
         <Button size="small" variant="outlined" onClick={()=> navigate(`/edit/${item.id}`)}>Edit</Button>
-        <Button size="small" variant="outlined" startIcon={<DeleteIcon />}>
+        <Button size="small" variant="outlined" startIcon={<DeleteIcon />} onClick={() => deleteContact(item.id)}>
           Delete
         </Button>
       </CardActions>

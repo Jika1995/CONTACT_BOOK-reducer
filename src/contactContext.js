@@ -51,6 +51,11 @@ const ContactContextProvider = ({children}) => {
       getContacts()
     }
 
+    async function deleteContact(id) {
+      await axios.delete(`${CONTACTS_API}/${id}`);
+      getContacts()
+    }
+
   return (
     <contactsContext.Provider value={{
         contacts: state.contacts,
@@ -59,7 +64,8 @@ const ContactContextProvider = ({children}) => {
         createContact,
         getContacts,
         getOneContact,
-        updateContact
+        updateContact,
+        deleteContact
     }}>
         {children}
     </contactsContext.Provider>

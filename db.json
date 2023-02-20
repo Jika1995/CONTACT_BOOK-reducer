@@ -1,10 +1,11 @@
 {
   "contacts": [
     {
-      "name": "Jika",
+      "name": "Jika lala",
       "surname": "Abd",
       "phoneNumber": "0551219188",
-      "id": 1
+      "id": 1,
+      "image": "https://www.shutterstock.com/image-photo/vietnamese-young-lady-traditional-robe-260nw-2105023217.jpg"
     },
     {
       "name": "Erlan",
@@ -17,12 +18,6 @@
       "surname": "LALA",
       "phoneNumber": "0000000",
       "id": 3
-    },
-    {
-      "name": "sdf",
-      "surname": "sdf",
-      "phoneNumber": "sdf",
-      "id": 4
     },
     {
       "name": "Alta",

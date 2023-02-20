@@ -33,6 +33,7 @@ const EditContact = () => {
   const [editedContact, setEditedContact] = useState(oneContact);
   const navigate = useNavigate();
   const { id } = useParams();
+  console.log(id);
 
  useEffect(() => {
     getOneContact(id)
@@ -66,16 +67,17 @@ const EditContact = () => {
 
     navigate('/');
 
-  }
-  return oneContact ? (
+  };
+
+  return editedContact ? (
     <div>
       <FormControlUnstyled>
       <Box sx={{ ...style, width: 400 }}>
           <h2 id="parent-modal-title">Enter Contact info</h2>
-          <TextField id="outlined-basic" label="Name" variant="outlined" size='small' sx={{m: 0.5, width: '30%', color: 'white'}} value={editedContact.name} name='name' onChange={handleInput}/>
-          <TextField id="outlined-basic2" label="Surname" variant="outlined" size='small' sx={{m: 0.5, width: '30%'}}  value={editedContact.surname} name='surname' onChange={handleInput}/>
-          <TextField id="outlined-basic3" label="Phone Number" variant="outlined" size='small' sx={{m: 0.5, width: '30%'}}  value={editedContact.phoneNumber} name='phoneNumber' onChange={handleInput}/>
-          <TextField id="outlined-basic3" label="Image" variant="outlined" size='small' sx={{m: 0.5, width: '30%'}}  value={editedContact.image} name='image' onChange={handleInput}/>
+          <TextField id="outlined-basic" label="Controlled" variant="outlined" size='small' sx={{m: 0.5, width: '30%', color: 'white'}} value={editedContact.name} name='name' onChange={handleInput}/>
+          <TextField id="outlined-basic2" label="Controlled" variant="outlined" size='small' sx={{m: 0.5, width: '30%'}}  value={editedContact.surname} name='surname' onChange={handleInput}/>
+          <TextField id="outlined-basic3" label="Controlled" variant="outlined" size='small' sx={{m: 0.5, width: '30%'}}  value={editedContact.phoneNumber} name='phoneNumber' onChange={handleInput}/>
+          <TextField id="outlined-basic3" label="Controlled" variant="outlined" size='small' sx={{m: 0.5, width: '30%'}}  value={editedContact.image} name='image' onChange={handleInput}/>
         <Button variant="contained" sx={{background: lightBlue[200]}} onClick={saveChanges}>Save Changes</Button>
         </Box>
       </FormControlUnstyled>
